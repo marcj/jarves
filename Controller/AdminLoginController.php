@@ -41,15 +41,22 @@ class AdminLoginController extends PluginController
         $adminAssets->addMainResources();
         $adminAssets->addLanguageResources();
         $adminAssets->addSessionScripts();
+        $adminAssets->appendAngularTemplates();
 
         $response = $pageStack->getPageResponse();
         $response->addJs(
             "
-        tinymce.baseURL =  _path+'bundles/jarves/tinymce',
-        window.addEvent('domready', function(){
-            jarves.adminInterface = new jarves.AdminInterface();
-        });
+        if ('undefined' !== typeof tinymce) {
+            tinymce.baseURL =  _path+'bundles/jarves/tinymce';
+        }
+//        window.addEvent('domready', function(){
+////            jarves.adminInterface = new jarves.AdminInterface();
+//        });
 "
+        );
+
+        $response->setBody(
+            '<jarves-admin></jarves-admin>'
         );
 
         $response->setResourceCompression(false);

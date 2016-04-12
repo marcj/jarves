@@ -1,11 +1,59 @@
 <config>
     <bundle>
         <adminAssets>
-            <asset src="@JarvesBundle/admin/mootools-core-1.4.5-fixed-memory-leak.js" />
-            <asset src="@JarvesBundle/admin/mootools-more.js" />
-            <assets src="@JarvesBundle/admin/js/mootools-extras/*.js" />
-            <asset src="@JarvesBundle/admin/js/lib/nunjucks.min.js" />
 
+            <asset priority="2000" src="@JarvesBundle/libraries/jquery-2.2.3.min.js"/>
+
+            <asset priority="2000" src="@JarvesBundle/libraries/typescript/typescript.js"/>
+
+            <!--<asset src="@JarvesBundle/admin/mootools-core-1.4.5-fixed-memory-leak.js" />-->
+            <!--<asset src="@JarvesBundle/admin/mootools-more.js" />-->
+            <!--<assets src="@JarvesBundle/admin/js/mootools-extras/*.js" />-->
+            <!--<asset src="@JarvesBundle/admin/js/lib/nunjucks.min.js" />-->
+
+            <!--<asset priority="2000" src="@JarvesBundle/libraries/es6-shim.min.js"/>-->
+            <!--<asset priority="2000" src="@JarvesBundle/libraries/system-polyfills.js"/>-->
+            <!--<asset priority="2000" src="@JarvesBundle/libraries/shims_for_IE.js"/>-->
+
+            <asset priority="2000" src="@JarvesBundle/libraries/angular2/angular2-polyfills.js"/>
+            <asset priority="2000" src="@JarvesBundle/libraries/system.js"/>
+            <asset priority="2000" src="@JarvesBundle/libraries/Rx.js"/>
+            <asset priority="2000" src="@JarvesBundle/libraries/angular2/angular2.dev.js"/>
+            <asset priority="2000" src="@JarvesBundle/libraries/angular2/http.dev.js"/>
+
+            <!--<asset priority="2000" src="@JarvesBundle/libraries/hammer.min.js"/>-->
+
+            <asset priority="2000" src="@JarvesBundle/system.js"/>
+            <asset compression="false" priority="2000" src="@JarvesBundle/start.js"/>
+
+
+
+            <assets src="@JarvesBundle/libraries/ladda/ladda.min.css"/>
+            <asset compression="false" src="@JarvesBundle/fonts/OpenSans/open-sans.css"/>
+            <asset compression="false" src="@JarvesBundle/fonts/OpenSans/open-sans-condensed.css"/>
+            <asset compression="false" src="@JarvesBundle/fonts/icons/style.css"/>
+
+
+            <asset src="@JarvesBundle/admin/icons/style.css" />
+
+            <asset src="@JarvesBundle/codemirror/lib/codemirror.js" />
+            <asset src="@JarvesBundle/codemirror/addon/mode/loadmode.js" />
+            <asset src="@JarvesBundle/codemirror/addon/selection/active-line.js" />
+            <asset src="@JarvesBundle/codemirror/lib/codemirror.css" />
+
+            <asset src="@JarvesBundle/fonts/OpenSans/open-sans.css" />
+            <asset src="@JarvesBundle/fonts/OpenSans/open-sans-condensed.css" />
+            <assets src="@JarvesBundle/admin/css/jarves.scss" />
+            <asset src="@JarvesBundle/admin/css/jarves/Button.scss" />
+            <asset src="@JarvesBundle/admin/css/jarves/ButtonGroup.scss" />
+            <assets src="@JarvesBundle/admin/css/lib/*.css" />
+            <assets src="@JarvesBundle/admin/css/jarves/*.css" />
+            <assets src="@JarvesBundle/admin/css/jarves/*.scss" />
+            <assets src="@JarvesBundle/admin/css/jarves/ui/*.css" />
+            <assets src="@JarvesBundle/admin/css/jarves/Field/*" />
+            <assets src="@JarvesBundle/css/directives/*.scss"/>
+
+<!--
             <asset src="@JarvesBundle/admin/js/jarves.js" />
             <asset src="@JarvesBundle/admin/js/jarves/AdminInterface.js" />
             <asset src="@JarvesBundle/admin/js/jarves/Button.js" />
@@ -55,7 +103,23 @@
             <assets src="@JarvesBundle/admin/css/jarves/*.scss" />
             <assets src="@JarvesBundle/admin/css/jarves/ui/*.css" />
             <assets src="@JarvesBundle/admin/css/jarves/Field/*" />
+            -->
         </adminAssets>
+        <!--
+        <adminAngularTemplates>
+            <assets src="@JarvesBundle/views/*.html"/>
+            <assets src="@JarvesBundle/views/fields/*.html"/>
+            <assets src="@JarvesBundle/views/directives/*.html"/>
+        </adminAngularTemplates>
+        <adminPreloadTypescriptModules>
+            <assets src="@JarvesBundle/directives/*.ts"/>
+            <assets src="@JarvesBundle/directives/admin/*.ts"/>
+            <assets src="@JarvesBundle/fields/*.ts"/>
+            <assets src="@JarvesBundle/filters/*.ts"/>
+            <assets src="@JarvesBundle/labels/*.ts"/>
+            <assets src="@JarvesBundle/services/*.ts"/>
+        </adminPreloadTypescriptModules>
+        -->
         <streams>
             <stream path="load" service="jarves.dashboard.widget:load" />
 

@@ -1,0 +1,25 @@
+<div>
+    <div ng-if="!jarvesField.isMultiple()">
+        <input type="text" class="jarves-Input-text" disabled ng-model="model" ng-trim="false"/>
+        <button ng-click="jarvesField.openChooser()" translate>Choose</button>
+    </div>
+    <div ng-if="jarvesField.isMultiple()">
+        <table class="jarves-field-object-list">
+            <tr ng-repeat="item in jarvesField.items">
+                <td>
+                    <jarves-object-label item="item"
+                                         object="jarvesField.getObject()"
+                                         label-field="jarvesField.getLabelField()"
+                                         template="jarvesField.getTemplate()"
+                    ></jarves-object-label>
+                </td>
+                <td width="30">
+                    <button ng-click="jarvesField.removeItem($index)" icon="#icon-minus-5"></button>
+                </td>
+            </tr>
+        </table>
+        <div class="text-right">
+            <button ng-click="jarvesField.openChooser()" translate>Add</button>
+        </div>
+    </div>
+</div>

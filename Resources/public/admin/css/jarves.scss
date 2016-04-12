@@ -21,7 +21,7 @@ html, body {
 
 $base-font-size: 13px;
 
-.jarves-admin, .jarves-normalize {
+jarves-admin, .jarves-normalize {
     font-family: "Open Sans", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", "Segoe UI", "Tahoma", sans-serif;
     font-size: $base-font-size;
     margin: 0px;
@@ -55,7 +55,7 @@ $base-font-size: 13px;
     padding: 30px 20px;
 }
 
-.jarves-admin {
+jarves-admin {
     table {
         border-collapse: separate;
         border-spacing: 0px;
@@ -410,7 +410,7 @@ $base-font-size: 13px;
     }
 }
 
-.jarves-admin {
+jarves-admin {
     .jarves-wm-tab > a {
         position: absolute;
         right: 3px;

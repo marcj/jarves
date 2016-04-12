@@ -103,7 +103,7 @@ class AdminAssets
         $prefix = substr($this->jarves->getAdminPrefix(), 1);
 
         $response->addJsFile($prefix . '/admin/ui/languages');
-        $response->addJsFile($prefix . '/admin/ui/language?lang=en&javascript=1');
+//        $response->addJsFile($prefix . '/admin/ui/language?lang=en&javascript=1');
         $response->addJsFile($prefix . '/admin/ui/language-plural?lang=en');
     }
 
@@ -120,6 +120,13 @@ class AdminAssets
         window._path = window._baseUrl = ' . json_encode($request->getBasePath() . '/') . '
         window._pathAdmin = ' . json_encode($request->getBaseUrl() . '/' . $prefix . '/')
         , 3001);
+
+        $response->addJs(
+            '
+        window._baseUrl = ' . json_encode($request->getBasePath() . '/') . '
+        window._baseUrlApi = ' . json_encode($request->getBaseUrl() . '/'),
+            3000
+        );
 
         if ($this->jarves->isDebugMode()) {
             foreach ($this->jarves->getConfigs() as $bundleConfig) {
